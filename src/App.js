@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getTokens } from './redux/slices/cryptoSlice';
 import './App.css';
 // import Navigation from './components/Navigation';
 import Home from './components/Home';
@@ -13,22 +16,29 @@ import Rank8 from './components/Rank8';
 import Rank9 from './components/Rank9';
 import Rank10 from './components/Rank10';
 
-const App = () => (
-  <main>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/1" element={<Rank1 />} />
-      <Route path="/2" element={<Rank2 />} />
-      <Route path="/3" element={<Rank3 />} />
-      <Route path="/4" element={<Rank4 />} />
-      <Route path="/5" element={<Rank5 />} />
-      <Route path="/6" element={<Rank6 />} />
-      <Route path="/7" element={<Rank7 />} />
-      <Route path="/8" element={<Rank8 />} />
-      <Route path="/9" element={<Rank9 />} />
-      <Route path="/10" element={<Rank10 />} />
-    </Routes>
-  </main>
-);
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTokens());
+  });
+  return (
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/1" element={<Rank1 />} />
+        <Route path="/2" element={<Rank2 />} />
+        <Route path="/3" element={<Rank3 />} />
+        <Route path="/4" element={<Rank4 />} />
+        <Route path="/5" element={<Rank5 />} />
+        <Route path="/6" element={<Rank6 />} />
+        <Route path="/7" element={<Rank7 />} />
+        <Route path="/8" element={<Rank8 />} />
+        <Route path="/9" element={<Rank9 />} />
+        <Route path="/10" element={<Rank10 />} />
+      </Routes>
+    </main>
+  );
+};
 
 export default App;

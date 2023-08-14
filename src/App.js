@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getTokens());
-  });
+  }, [dispatch]);
   return (
     <main>
       <Routes>

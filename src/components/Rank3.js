@@ -1,9 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import Token from './Token';
 
-const Rank3 = () => (
-  <div>
-    <NavLink className="link" to="/">home</NavLink>
-    <h2>Coin #3</h2>
-  </div>
-);
+const Rank3 = () => {
+  const rank = '3';
+  return (
+    <div>
+      <Token rank={rank} />
+    </div>
+  );
+};
 export default Rank3;

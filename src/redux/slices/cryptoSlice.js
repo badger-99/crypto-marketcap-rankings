@@ -1,16 +1,33 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'api.coincap.io/v2/assets';
+const config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.coincap.io/v2/assets',
+  headers: {},
+};
+
 export const getTokens = createAsyncThunk('tokens/getTokens', async (_, thunkAPI) => {
   try {
-    const response = await axios(url);
+    const response = await axios(config);
+    // console.log(response);
     return response.data;
   } catch (error) {
     const errorMsg = `${error.code}: ${error.msg}`;
     return thunkAPI.rejectWithValue(errorMsg);
   }
 });
+
+const formatCryptoStats = (token) => {
+  token.marketCapUsd = parseFloat(token.marketCapUsd).toFixed(2);
+  token.marketCapUsd = parseFloat(token.marketCapUsd).toLocaleString();
+  token.maxSupply = parseFloat(token.maxSupply).toLocaleString();
+  token.priceUsd = parseFloat(token.priceUsd).toFixed(2);
+  token.priceUsd = parseFloat(token.priceUsd).toLocaleString();
+  token.supply = parseFloat(token.supply).toLocaleString();
+  return token;
+};
 
 const initialState = {
   cryptoArray: [],
@@ -27,7 +44,8 @@ const cryptoSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getTokens.fulfilled, (state, action) => {
-        state.cryptoArray = action.payload;
+        state.cryptoArray = action.payload.data.slice(0, 10);
+        state.cryptoArray = state.cryptoArray.map((token) => formatCryptoStats(token));
         console.log(state.cryptoArray);
       })
       .addCase(getTokens.rejected, (state, action) => {

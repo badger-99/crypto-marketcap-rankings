@@ -13,7 +13,7 @@ const Token = ({ rank }) => {
 
   return (
     <article>
-      <NavLink className='link' to='/' data-testid='navLink'>
+      <NavLink className="link" to="/" data-testid="navLink">
         home
       </NavLink>
       <div>

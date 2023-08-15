@@ -10,7 +10,10 @@ test('Navigation component renders as expected', () => {
   const initialState = {
     crypto: {
       cryptoArray: [
-        { name: 'testCoin' },
+        {
+          name: 'testCoin',
+          rank:'1',
+        },
       ],
     },
   };

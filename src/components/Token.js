@@ -3,11 +3,19 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Token = ({ rank }) => {
-  const { cryptoArray } = useSelector((store) => store.crypto);
+  const { cryptoArray, error } = useSelector((store) => store.crypto);
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
+
   const token = cryptoArray.filter((coin) => coin.rank === rank)[0];
+
   return (
     <article>
-      <NavLink className="link" to="/">home</NavLink>
+      <NavLink className='link' to='/' data-testid='navLink'>
+        home
+      </NavLink>
       <div>
         <h1>{`#${token.rank}`}</h1>
         <h2>{`Name: ${token.name} (${token.symbol})`}</h2>

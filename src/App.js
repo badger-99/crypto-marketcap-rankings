@@ -1,22 +1,23 @@
 import { Routes, Route } from 'react-router';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getTokens } from './redux/slices/cryptoSlice';
 import './App.css';
 import Home from './components/Home';
 import Token from './components/Token';
 
 const App = () => {
+  const { cryptoArray } = useSelector((store) => store.crypto);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTokens());
   }, [dispatch]);
 
-  const generateRoutes = () => {
+  const generateRoutes = (arr) => {
     const routes = [];
 
-    for (let rank = 1; rank <= 10; rank += 1) {
+    for (let rank = 1; rank <= arr.length; rank += 1) {
       routes.push(
         <Route
           key={rank}
@@ -33,7 +34,7 @@ const App = () => {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        {generateRoutes()}
+        {generateRoutes(cryptoArray)}
       </Routes>
     </main>
   );

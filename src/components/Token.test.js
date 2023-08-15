@@ -1,10 +1,10 @@
-import { MemoryRouter } from "react-router";
-import { Provider } from "react-redux";
-import configureMockStore from 'redux-mock-store'
-import { getByTestId, render } from "@testing-library/react";
-import Token from "./Token";
+import { MemoryRouter } from 'react-router';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import { render } from '@testing-library/react';
+import Token from './Token';
 
-const mockStore = configureMockStore()
+const mockStore = configureMockStore();
 
 describe('testing the Token component', () => {
   it('renders an error message after a failed API request', () => {
@@ -27,7 +27,7 @@ describe('testing the Token component', () => {
           },
         ],
         error: 'There has been an error',
-      }
+      },
     };
 
     const store = mockStore(initialState);
@@ -35,11 +35,11 @@ describe('testing the Token component', () => {
     const token = render(
       <Provider store={store}>
         <Token rank="11" />
-      </Provider>
-    )
+      </Provider>,
+    );
 
     expect(token.getByText('There has been an error')).toBeInTheDocument();
-  })
+  });
 
   it('correctly renders the link to the home page', () => {
     const initialState = {
@@ -61,24 +61,24 @@ describe('testing the Token component', () => {
           },
         ],
         error: null,
-      }
+      },
     };
 
     const store = mockStore(initialState);
-    
-    const {getByTestId} = render(
+
+    const { getByTestId } = render(
       <MemoryRouter>
         <Provider store={store}>
           <Token rank="11" />
         </Provider>
-      </MemoryRouter>
-    )
+      </MemoryRouter>,
+    );
 
-    const homeLink = getByTestId('navLink')
+    const homeLink = getByTestId('navLink');
 
     expect(homeLink).toBeInTheDocument();
     expect(homeLink.getAttribute('href')).toBe('/');
-  })
+  });
 
   it('renders correct cryptocurrency detais', () => {
     const initialState = {
@@ -100,18 +100,18 @@ describe('testing the Token component', () => {
           },
         ],
         error: null,
-      }
+      },
     };
 
     const store = mockStore(initialState);
-    
+
     const token = render(
       <MemoryRouter>
         <Provider store={store}>
           <Token rank="11" />
         </Provider>
-      </MemoryRouter>
-    )
+      </MemoryRouter>,
+    );
 
     expect(token.getByText('#11')).toBeInTheDocument();
     expect(token.getByText('Name: Polkadot (DOT)')).toBeInTheDocument();
@@ -119,5 +119,5 @@ describe('testing the Token component', () => {
     expect(token.getByText('Supply: 1264429412.94 units')).toBeInTheDocument();
     expect(token.getByText('Max-supply: Unlimited units')).toBeInTheDocument();
     expect(token.getByText('Market Cap: $ 6284893105.60')).toBeInTheDocument();
-  })
-})
+  });
+});

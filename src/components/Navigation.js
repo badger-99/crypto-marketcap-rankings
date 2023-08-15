@@ -25,8 +25,12 @@ const Navigation = () => {
       return <p>Out Of Bounds.</p>;
     }
 
-    let result = [];
-    result = generateNavLinks(token);
+    const result = (
+      <NavLink key={rank} className="link" to={`/${token[0].rank}`}>
+        {`#${token[0].rank} ${token[0].name}`}
+      </NavLink>
+    );
+
     return result;
   };
 
@@ -37,7 +41,7 @@ const Navigation = () => {
       }}
       >
         <input type="text" placeholder="Search by Rank" onChange={(e) => setQuerry(e.target.value)} />
-        <button type="submit">Serach</button>
+        <button type="submit">Search</button>
       </form>
       {querry
         ? (

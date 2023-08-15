@@ -8,7 +8,7 @@ const Navigation = () => {
     const linkArray = [];
     for (let rank = 1; rank <= cryptoArray.length; rank += 1) {
       linkArray.push(
-        <NavLink className="link" to={`/${rank}`}>
+        <NavLink key={rank} className="link" to={`/${rank}`}>
           {`#${rank} ${cryptoArray[rank - 1].name}`}
         </NavLink>,
       );

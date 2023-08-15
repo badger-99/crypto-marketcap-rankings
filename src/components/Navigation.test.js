@@ -10,14 +10,14 @@ test('Navigation component renders as expected', () => {
   const initialState = {
     crypto: {
       cryptoArray: [
-        {name:'testCoin',}
-      ]
-    }
-  }
+        { name: 'testCoin' },
+      ],
+    },
+  };
 
   const store = mockStore(initialState);
 
-  const {getByRole, getByText} = render(
+  const { getByRole, getByText } = render(
     <MemoryRouter>
       <Provider store={store}>
         <Navigation />
@@ -25,7 +25,7 @@ test('Navigation component renders as expected', () => {
     </MemoryRouter>,
   );
 
-  const navLink = getByRole('link')
+  const navLink = getByRole('link');
   expect(getByText('#1 testCoin')).toBeInTheDocument();
   expect(navLink.getAttribute('href')).toBe('/1');
 });

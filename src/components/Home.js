@@ -12,15 +12,19 @@ const Home = () => (
       <div className="first">
         {date}
       </div>
-      <p>Top 100 Tokens</p>
+      <p>Top 100 Coins</p>
       <div className="row dummyIcons">
         <BsFillMicFill />
         <IoSettingsSharp />
       </div>
     </header>
-    <div className="row">
-      <SiCoinmarketcap />
-      <h1>Top-10 Crypto Currencies</h1>
+    <div id="home" className="row">
+      <SiCoinmarketcap id="logo" />
+      <div className="column">
+        <h1>Coin</h1>
+        <h1>Market Cap</h1>
+        <h1>Rankings</h1>
+      </div>
     </div>
     <Navigation />
   </div>

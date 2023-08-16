@@ -48,3 +48,14 @@ header p {
 .dummyIcons {
   gap: 1.5rem;
 }
+
+#home {
+  border: 1px solid blue;
+  height: 9rem;
+  padding: 1rem;
+  justify-content: space-evenly;
+}
+
+#logo {
+  font-size: 7rem;
+}

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
@@ -12,7 +15,7 @@ test('Navigation component renders as expected', () => {
       cryptoArray: [
         {
           name: 'testCoin',
-          rank:'1',
+          rank: '1',
         },
       ],
     },

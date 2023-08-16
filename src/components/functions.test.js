@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
-import { generateNavLinks, searchByRank } from './functions';
+import { MemoryRouter, Route, Routes } from 'react-router';
+import { generateNavLinks, generateRoutes, searchByRank } from './functions';
 
 describe('testing helper functions', () => {
   test('test generateNavLinks function', () => {
@@ -88,5 +88,33 @@ describe('testing helper functions', () => {
     expect(queryByText('#2 subCoin')).not.toBeInTheDocument();
     expect(queryByText('#3 miniCoin')).not.toBeInTheDocument();
     expect(getByText('Out Of Bounds.')).toBeInTheDocument();
+  })
+
+  test('test generateRoutes function', () => {
+    const cryptoArray = [
+      {
+        name: 'testCoin',
+        rank: '1',
+      },
+      {
+        name: 'subCoin',
+        rank: '2',
+      },
+      {
+        name: 'miniCoin',
+        rank: '3',
+      },
+    ];
+
+    const routes = render(
+      <MemoryRouter>
+        <Routes>
+          <Route path='/' element={<div>Home Page</div>} />
+          {generateRoutes(cryptoArray)}
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(routes).toMatchSnapshot();
   })
 });

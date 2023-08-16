@@ -22,6 +22,7 @@ const Navigation = () => {
   return (
     <nav>
       <form
+        id="form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
@@ -31,13 +32,15 @@ const Navigation = () => {
           placeholder="Search by Rank"
           onChange={(e) => setQuerry(e.target.value)}
         />
-        <button type="submit">Search</button>
+        {/* <button type="submit">Search</button> */}
       </form>
-      {querry ? (
+      {/* {querry ? (
         <div>{searchByRank(cryptoArray, querry)}</div>
-      ) : (
-        <ul>{generateNavLinks(cryptoArray)}</ul>
-      )}
+        ) : (
+          <ul id="coinGrid">{generateNavLinks(cryptoArray)}</ul>
+          )} */}
+      {querry && <div id="searchResult">{searchByRank(cryptoArray, querry)}</div>}
+      <ul id="coinGrid">{generateNavLinks(cryptoArray)}</ul>
     </nav>
   );
 };

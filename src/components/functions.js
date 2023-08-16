@@ -5,7 +5,7 @@ export const generateNavLinks = (cryptoArray) => {
   const linkArray = [];
   for (let rank = 1; rank <= cryptoArray.length; rank += 1) {
     linkArray.push(
-      <li key={rank}>
+      <li key={rank} className="gridItem">
         <NavLink className="link" to={`/${rank}`}>
           {`#${cryptoArray[rank - 1].rank} ${cryptoArray[rank - 1].name}`}
         </NavLink>

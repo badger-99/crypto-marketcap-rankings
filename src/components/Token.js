@@ -9,9 +9,15 @@ const Token = ({ rank }) => {
 
   return (
     <article>
-      <NavLink className="link" to="/" data-testid="navLink">
-        home
-      </NavLink>
+      <header>
+        <div>
+          <NavLink className="link" to="/" data-testid="navLink">
+            home
+          </NavLink>
+        </div>
+        <p>Coin Stats</p>
+        <div>dummy logos</div>
+      </header>
       <div>
         <h1>{`#${token.rank}`}</h1>
         <h2>{`Name: ${token.name} (${token.symbol})`}</h2>

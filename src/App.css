@@ -22,12 +22,29 @@ li {
 
 main {
   position: absolute;
-  padding: 1rem;
   border: 1px solid black;
   min-width: 375px;
-  max-width: 428px;
+  width: 22.5%;
   height: 80vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+header {
+  border: 1px solid red;
+  padding: 0.75rem;
+  height: 2.844rem;
+}
+
+.homeLink {
+  padding-right: 1.5rem;
+}
+
+header p {
+  margin: 0 auto;
+}
+
+.dummyIcons {
+  gap: 1.5rem;
 }

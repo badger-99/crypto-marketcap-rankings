@@ -12,13 +12,13 @@ const Token = ({ rank }) => {
   return (
     <article>
       <header className="row">
-        <div>
+        <div className="homeLink first">
           <NavLink className="link" to="/" data-testid="navLink">
             <BsChevronLeft />
           </NavLink>
         </div>
-        <p>Coin Stats</p>
-        <div>
+        <p>Stats</p>
+        <div className="row dummyIcons">
           <BsFillMicFill />
           <IoSettingsSharp />
         </div>

@@ -5,15 +5,15 @@ import { IoSettingsSharp } from 'react-icons/io5';
 import Navigation from './Navigation';
 
 const dt = DateTime.now();
-const date = dt.toLocaleString(DateTime.DATE_MED);
+const date = dt.toFormat('dd LLL yy');
 const Home = () => (
   <div>
     <header className="row">
-      <div>
+      <div className="first">
         {date}
       </div>
-      <p>Rankings</p>
-      <div>
+      <p>Top 100 Tokens</p>
+      <div className="row dummyIcons">
         <BsFillMicFill />
         <IoSettingsSharp />
       </div>

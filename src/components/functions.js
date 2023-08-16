@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
+import Token from './Token';
 
 export const generateNavLinks = (cryptoArray) => {
   const linkArray = [];
@@ -28,4 +29,20 @@ export const searchByRank = (arr, rank) => {
   );
 
   return result;
+};
+
+export const generateRoutes = (arr) => {
+  const routes = [];
+
+  for (let rank = 1; rank <= arr.length; rank += 1) {
+    routes.push(
+      <Route
+        key={rank}
+        path={`/${rank}`}
+        element={<Token rank={`${rank.toString()}`} />}
+      />,
+    );
+  }
+
+  return routes;
 };

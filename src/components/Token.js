@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { BsChevronLeft, BsFillMicFill } from 'react-icons/bs';
+import { IoSettingsSharp } from 'react-icons/io5';
 
 const Token = ({ rank }) => {
   const { cryptoArray } = useSelector((store) => store.crypto);
@@ -12,11 +14,14 @@ const Token = ({ rank }) => {
       <header>
         <div>
           <NavLink className="link" to="/" data-testid="navLink">
-            home
+            <BsChevronLeft />
           </NavLink>
         </div>
         <p>Coin Stats</p>
-        <div>dummy logos</div>
+        <div>
+          <BsFillMicFill />
+          <IoSettingsSharp />
+        </div>
       </header>
       <div>
         <h1>{`#${token.rank}`}</h1>

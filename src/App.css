@@ -21,8 +21,13 @@ li {
 }
 
 main {
+  position: absolute;
+  padding: 1rem;
   border: 1px solid black;
+  min-width: 375px;
   max-width: 428px;
-  height: 100%;
-  margin: auto;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

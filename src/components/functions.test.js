@@ -18,14 +18,14 @@ describe('testing helper functions', () => {
       },
     ];
 
-    const container = render(
+    render(
       <MemoryRouter>
         <ul>{generateNavLinks(cryptoArray)}</ul>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
-    const li1 = screen.getByText('#1 testCoin')
-    const li2 = screen.getByText('#2 subCoin')
+    const li1 = screen.getByText('#1 testCoin');
+    const li2 = screen.getByText('#2 subCoin');
 
     expect(li1).toBeInTheDocument();
     expect(li2).toBeInTheDocument();
@@ -47,11 +47,11 @@ describe('testing helper functions', () => {
       },
     ];
 
-    const {getByText, getByRole, queryByText} = render(
+    const { getByText, getByRole, queryByText } = render(
       <MemoryRouter>
         <div>{searchByRank(cryptoArray, '3')}</div>
-      </MemoryRouter>
-    )
+      </MemoryRouter>,
+    );
 
     const link = getByRole('link');
 
@@ -60,7 +60,7 @@ describe('testing helper functions', () => {
     expect(getByText('#3 miniCoin')).toBeInTheDocument();
     expect(queryByText('Out Of Bounds.')).not.toBeInTheDocument();
     expect(link.getAttribute('href')).toBe('/3');
-  })
+  });
 
   test('test searchByRank function with non-exsisting rank', () => {
     const cryptoArray = [
@@ -78,17 +78,17 @@ describe('testing helper functions', () => {
       },
     ];
 
-    const {getByText, queryByText} = render(
+    const { getByText, queryByText } = render(
       <MemoryRouter>
         <div>{searchByRank(cryptoArray, 'anyOtherValue')}</div>
-      </MemoryRouter>
-    )
+      </MemoryRouter>,
+    );
 
     expect(queryByText('#1 testCoin')).not.toBeInTheDocument();
     expect(queryByText('#2 subCoin')).not.toBeInTheDocument();
     expect(queryByText('#3 miniCoin')).not.toBeInTheDocument();
     expect(getByText('Out Of Bounds.')).toBeInTheDocument();
-  })
+  });
 
   test('test generateRoutes function', () => {
     const cryptoArray = [
@@ -109,12 +109,12 @@ describe('testing helper functions', () => {
     const routes = render(
       <MemoryRouter>
         <Routes>
-          <Route path='/' element={<div>Home Page</div>} />
+          <Route path="/" element={<div>Home Page</div>} />
           {generateRoutes(cryptoArray)}
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect(routes).toMatchSnapshot();
-  })
+  });
 });

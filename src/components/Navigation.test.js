@@ -30,7 +30,7 @@ describe('test Navigation component', () => {
         <Provider store={store}>
           <Navigation />
         </Provider>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const navLink = getByRole('link');
@@ -58,7 +58,7 @@ describe('test Navigation component', () => {
         <Provider store={store}>
           <Navigation />
         </Provider>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect(getByText('There has been an error')).toBeInTheDocument();

@@ -11,7 +11,7 @@ const Token = ({ rank }) => {
 
   return (
     <article>
-      <header>
+      <header className="row">
         <div>
           <NavLink className="link" to="/" data-testid="navLink">
             <BsChevronLeft />

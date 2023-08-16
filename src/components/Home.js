@@ -5,8 +5,8 @@ import Navigation from './Navigation';
 
 const Home = () => (
   <div>
-    <header>
-      <div>
+    <header className="row">
+      <div className="column">
         <span>Coin</span>
         <span>Market</span>
         <span>Cap</span>

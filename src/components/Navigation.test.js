@@ -19,6 +19,7 @@ describe('test Navigation component', () => {
             rank: '1',
           },
         ],
+        isLoading: false,
         error: null,
       },
     };
@@ -38,7 +39,7 @@ describe('test Navigation component', () => {
     expect(navLink.getAttribute('href')).toBe('/1');
   });
 
-  it('renders an error message after a failed API request', () => {
+  test('Navigation component renders loading spinner during api call', () => {
     const initialState = {
       crypto: {
         cryptoArray: [
@@ -47,6 +48,34 @@ describe('test Navigation component', () => {
             rank: '1',
           },
         ],
+        isLoading: true,
+        error: null,
+      },
+    };
+
+    const store = mockStore(initialState);
+
+    const nav = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <Navigation />
+        </Provider>
+      </MemoryRouter>,
+    );
+
+    expect(nav).toMatchSnapshot();
+  });
+
+  test('Navigation component renders an error message after a failed API request', () => {
+    const initialState = {
+      crypto: {
+        cryptoArray: [
+          {
+            name: 'testCoin',
+            rank: '1',
+          },
+        ],
+        isLoading: false,
         error: 'There has been an error',
       },
     };

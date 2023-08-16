@@ -24,6 +24,7 @@ main {
   border: 1px solid black;
   min-width: 375px;
   width: 22.5%;
+  height: 37.413rem;
   position: fixed;
   top: 50%;
   left: 50%;

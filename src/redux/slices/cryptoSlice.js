@@ -34,6 +34,7 @@ const formatCryptoStats = (token) => {
 
 const initialState = {
   cryptoArray: [],
+  isLoading: false,
   error: null,
 };
 
@@ -42,9 +43,13 @@ const cryptoSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
+      .addCase(getTokens.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(getTokens.fulfilled, (state, action) => {
         state.cryptoArray = action.payload.data.slice(0, 10);
         state.cryptoArray = state.cryptoArray.map((token) => formatCryptoStats(token));
+        state.isLoading = false;
       })
       .addCase(getTokens.rejected, (state, action) => {
         state.error = action.payload;

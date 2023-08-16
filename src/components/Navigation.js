@@ -3,29 +3,32 @@ import { useSelector } from 'react-redux';
 import { generateNavLinks, searchByRank } from './functions';
 
 const Navigation = () => {
-  const { cryptoArray } = useSelector((store) => store.crypto);
+  const { cryptoArray, error } = useSelector((store) => store.crypto);
   const [querry, setQuerry] = useState('');
+
+  if (error) {
+    return <div><h1>{error}</h1></div>;
+  }
 
   return (
     <nav>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-      }}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
       >
-        <input type="text" placeholder="Search by Rank" onChange={(e) => setQuerry(e.target.value)} />
-        <button type="submit">Search</button>
+        <input
+          type='text'
+          placeholder='Search by Rank'
+          onChange={(e) => setQuerry(e.target.value)}
+        />
+        <button type='submit'>Search</button>
       </form>
-      {querry
-        ? (
-          <div>
-            {searchByRank(cryptoArray, querry)}
-          </div>
-        )
-        : (
-          <ul>
-            {generateNavLinks(cryptoArray)}
-          </ul>
-        )}
+      {querry ? (
+        <div>{searchByRank(cryptoArray, querry)}</div>
+      ) : (
+        <ul>{generateNavLinks(cryptoArray)}</ul>
+      )}
     </nav>
   );
 };

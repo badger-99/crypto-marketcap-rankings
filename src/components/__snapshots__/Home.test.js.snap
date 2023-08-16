@@ -21,9 +21,7 @@ Object {
               Search
             </button>
           </form>
-          <ul
-            class="column"
-          />
+          <ul />
         </nav>
       </div>
     </div>
@@ -45,9 +43,7 @@ Object {
             Search
           </button>
         </form>
-        <ul
-          class="column"
-        />
+        <ul />
       </nav>
     </div>
   </div>,

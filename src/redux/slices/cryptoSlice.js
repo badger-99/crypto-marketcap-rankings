@@ -47,7 +47,7 @@ const cryptoSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getTokens.fulfilled, (state, action) => {
-        state.cryptoArray = action.payload.data;
+        state.cryptoArray = action.payload.data.slice(0, 10);
         state.cryptoArray = state.cryptoArray.map((token) => formatCryptoStats(token));
         state.isLoading = false;
       })

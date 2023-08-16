@@ -12,7 +12,7 @@ const Home = () => (
       <div className="first">
         {date}
       </div>
-      <p>Top 100 Coins</p>
+      <p>Top 10 Coins</p>
       <div className="row dummyIcons">
         <BsFillMicFill />
         <IoSettingsSharp />

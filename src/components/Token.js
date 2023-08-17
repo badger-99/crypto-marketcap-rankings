@@ -35,6 +35,10 @@ const Token = ({ rank }) => {
           <span>{`$ ${token.priceUsd}`}</span>
         </p>
         <p>
+          Volume traded over past 24h:
+          <span>{`$ ${token.volumeUsd24Hr}`}</span>
+        </p>
+        <p>
           Supply:
           <span>{`${token.supply} units`}</span>
         </p>

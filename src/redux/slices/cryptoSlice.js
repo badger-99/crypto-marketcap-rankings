@@ -29,6 +29,8 @@ const formatCryptoStats = (token) => {
   token.priceUsd = parseFloat(token.priceUsd).toFixed(2);
   token.priceUsd = parseFloat(token.priceUsd).toLocaleString();
   token.supply = parseFloat(token.supply).toLocaleString();
+  token.volumeUsd24Hr = parseFloat(token.priceUsd).toFixed(2);
+  token.volumeUsd24Hr = parseFloat(token.priceUsd).toLocaleString();
   return token;
 };
 

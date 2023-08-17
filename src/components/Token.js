@@ -24,28 +24,35 @@ const Token = ({ rank }) => {
         </div>
       </header>
       <div>
-        <h1>{`#${token.rank}`}</h1>
-        <h2>{`Name: ${token.name} (${token.symbol})`}</h2>
-        <p>
-          Market Cap:
-          <span>{`$ ${token.marketCapUsd}`}</span>
-        </p>
-        <p>
-          Price:
-          <span>{`$ ${token.priceUsd}`}</span>
-        </p>
-        <p>
-          Volume traded over past 24h:
-          <span>{`$ ${token.volumeUsd24Hr}`}</span>
-        </p>
-        <p>
-          Supply:
-          <span>{`${token.supply} units`}</span>
-        </p>
-        <p>
-          Max-supply:
-          <span>{`${token.maxSupply} units`}</span>
-        </p>
+        <div className="statsTitle row">
+          <h1>{`#${token.rank}`}</h1>
+          <h2 className="column coinName">
+            <span>{`${token.name}`}</span>
+            <span>{`(${token.symbol})`}</span>
+          </h2>
+        </div>
+        <div className="coinStats">
+          <p className="row">
+            <span>Market Cap:</span>
+            <span>{`$ ${token.marketCapUsd}`}</span>
+          </p>
+          <p className="row">
+            <span>Price:</span>
+            <span>{`$ ${token.priceUsd}`}</span>
+          </p>
+          <p className="row">
+            <span>Volume traded over past 24h:</span>
+            <span>{`$ ${token.volumeUsd24Hr}`}</span>
+          </p>
+          <p className="row">
+            <span>Supply:</span>
+            <span>{`${token.supply} units`}</span>
+          </p>
+          <p className="row">
+            <span>Max-supply:</span>
+            <span>{`${token.maxSupply} units`}</span>
+          </p>
+        </div>
       </div>
     </article>
   );

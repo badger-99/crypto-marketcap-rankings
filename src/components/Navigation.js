@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { generateNavLinks } from './functions';
+import { generateNavLinks, searchByRank } from './functions';
 
 const Navigation = () => {
   const { cryptoArray, isLoading, error } = useSelector((store) => store.crypto);
+  const [querry, setQuerry] = useState('');
 
   if (isLoading) {
     return (
@@ -19,7 +21,20 @@ const Navigation = () => {
 
   return (
     <nav id="coinNav">
+      <form
+        id="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Search by Rank"
+          onChange={(e) => setQuerry(e.target.value)}
+        />
+      </form>
       <ul id="coinGrid">{generateNavLinks(cryptoArray)}</ul>
+      {querry && <div id="searchResult">{searchByRank(cryptoArray, querry)}</div>}
     </nav>
   );
 };

@@ -83,13 +83,18 @@ header p {
   position: relative;
 }
 
-.gridItem a {
+.gridLink {
   border: 1px solid;
-  display: block;
   width: 100%;
   height: 100%;
-  padding: 1.9rem;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
 }
+
+/* .gridLink p {
+  width: 4rem;
+} */
 
 #searchResult {
   position: absolute;
@@ -105,8 +110,13 @@ header p {
   pointer-events: all;
 }
 
-#searchResult a, #searchResult p {
+#searchLink, #searchError {
   border: 1px solid;
   padding: 4rem;
   background: whitesmoke;
+}
+
+#searchLink {
+  gap: 1rem;
+  align-items: center;
 }

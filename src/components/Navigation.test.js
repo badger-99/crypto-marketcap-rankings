@@ -35,7 +35,8 @@ describe('test Navigation component', () => {
     );
 
     const navLink = getByRole('link');
-    expect(getByText('#1 testCoin')).toBeInTheDocument();
+    expect(getByText('#1')).toBeInTheDocument();
+    expect(getByText('testCoin')).toBeInTheDocument();
     expect(navLink.getAttribute('href')).toBe('/1');
   });
 

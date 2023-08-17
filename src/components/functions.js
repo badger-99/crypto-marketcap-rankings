@@ -5,9 +5,10 @@ export const generateNavLinks = (cryptoArray) => {
   const linkArray = [];
   for (let rank = 1; rank <= cryptoArray.length; rank += 1) {
     linkArray.push(
-      <li key={rank}>
-        <NavLink className="link" to={`/${rank}`}>
-          {`#${cryptoArray[rank - 1].rank} ${cryptoArray[rank - 1].name}`}
+      <li key={rank} className="gridItem ">
+        <NavLink className="link row gridLink" to={`/${rank}`}>
+          <h2>{`#${cryptoArray[rank - 1].rank}`}</h2>
+          <p>{`${cryptoArray[rank - 1].name}`}</p>
         </NavLink>
       </li>,
     );
@@ -15,16 +16,20 @@ export const generateNavLinks = (cryptoArray) => {
   return linkArray;
 };
 
-export const searchByRank = (arr, rank) => {
-  const token = arr.filter((coin) => coin.rank === rank);
+export const filterByRankOrName = (arr, parameter) => {
+  const argument = parameter.toLowerCase();
+  const token = arr.filter(
+    (coin) => coin.rank === argument || coin.name.toLowerCase() === argument,
+  );
 
   if (token.length === 0) {
-    return <p>Out Of Bounds.</p>;
+    return <span id="searchError" className="column">Out Of Bounds</span>;
   }
 
   const result = (
-    <NavLink key={rank} className="link" to={`/${token[0].rank}`}>
-      {`#${token[0].rank} ${token[0].name}`}
+    <NavLink id="searchLink" className="link column" to={`/${token[0].rank}`}>
+      <h2>{`#${token[0].rank}`}</h2>
+      <p>{`${token[0].name}`}</p>
     </NavLink>
   );
 

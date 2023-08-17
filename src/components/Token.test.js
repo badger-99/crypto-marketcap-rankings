@@ -80,14 +80,15 @@ describe('testing the Token component', () => {
     );
 
     expect(token.getByText('#11')).toBeInTheDocument();
-    expect(token.getByText('Name: Polkadot (DOT)')).toBeInTheDocument();
-    expect(token.getByText('Price:')).toBeInTheDocument();
+    expect(token.getByText('Polkadot')).toBeInTheDocument();
+    expect(token.getByText('(DOT)')).toBeInTheDocument();
+    expect(token.getByText('Price')).toBeInTheDocument();
     expect(token.getByText('$ 4.97')).toBeInTheDocument();
-    expect(token.getByText('Supply:')).toBeInTheDocument();
+    expect(token.getByText('Supply')).toBeInTheDocument();
     expect(token.getByText('1264429412.94 units')).toBeInTheDocument();
-    expect(token.getByText('Max-supply:')).toBeInTheDocument();
+    expect(token.getByText('Max-supply')).toBeInTheDocument();
     expect(token.getByText('Unlimited units')).toBeInTheDocument();
-    expect(token.getByText('Market Cap:')).toBeInTheDocument();
+    expect(token.getByText('Market Cap')).toBeInTheDocument();
     expect(token.getByText('$ 6284893105.60')).toBeInTheDocument();
   });
 });

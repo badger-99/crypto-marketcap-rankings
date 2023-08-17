@@ -62,10 +62,23 @@ header p {
   font-size: 0.97rem;
 }
 
+#form {
+  padding: 0.5rem;
+}
+
+#form input {
+  width: 100%;
+  padding: 0.2rem;
+}
+
+#form input::placeholder{
+  text-align: center;
+}
+
 #coinGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-height: 25.25rem;
+  max-height: 22.55rem;
   overflow-y: auto;
 }
 

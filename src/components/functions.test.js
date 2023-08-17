@@ -49,7 +49,7 @@ describe('testing helper functions', () => {
     const { getByText, getByRole, queryByText } = render(
       <MemoryRouter>
         <div>{filterByRankOrName(cryptoArray, '3')}</div>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const link = getByRole('link');
@@ -62,7 +62,40 @@ describe('testing helper functions', () => {
     expect(link.getAttribute('href')).toBe('/3');
   });
 
-  test('test searchByRank function with non-exsisting rank', () => {
+  test('test searchByRank function with exsisting name', () => {
+    const cryptoArray = [
+      {
+        name: 'testCoin',
+        rank: '1',
+      },
+      {
+        name: 'subCoin',
+        rank: '2',
+      },
+      {
+        name: 'miniCoin',
+        rank: '3',
+      },
+    ];
+
+    const { getByRole, queryByText } = render(
+      <MemoryRouter>
+        <div>{filterByRankOrName(cryptoArray, 'subcoin')}</div>
+      </MemoryRouter>,
+    );
+
+    const link = getByRole('link');
+
+    expect(queryByText('#1 testCoin')).not.toBeInTheDocument();
+    expect(queryByText('#2')).toBeInTheDocument();
+    expect(queryByText('subCoin')).toBeInTheDocument();
+    expect(queryByText('#3')).not.toBeInTheDocument();
+    expect(queryByText('miniCoin')).not.toBeInTheDocument();
+    expect(queryByText('Out Of Bounds.')).not.toBeInTheDocument();
+    expect(link.getAttribute('href')).toBe('/2');
+  });
+
+  test('test searchByRank function with non-exsisting querry', () => {
     const cryptoArray = [
       {
         name: 'testCoin',
@@ -80,7 +113,7 @@ describe('testing helper functions', () => {
 
     const { getByText, queryByText } = render(
       <MemoryRouter>
-        <div>{searchByRank(cryptoArray, 'anyOtherValue')}</div>
+        <div>{filterByRankOrName(cryptoArray, 'anyOtherValue')}</div>
       </MemoryRouter>,
     );
 

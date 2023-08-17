@@ -74,8 +74,8 @@ To get a local copy up and running, follow these steps.
 
 - Clone this project.
 - Open it in VS code.
-- Run `npm install` to install the dependencies
-- Run `npm start` to open it in the dev server
+- Run `npm install` to install the dependencies.
+- Run `npm start` to open it in the dev server.
 
 ### Prerequisites
 

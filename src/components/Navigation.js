@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { generateNavLinks, searchByRank } from './functions';
+import { generateNavLinks, filterByRankOrName } from './functions';
 
 const Navigation = () => {
   const { cryptoArray, isLoading, error } = useSelector((store) => store.crypto);
@@ -38,12 +38,12 @@ const Navigation = () => {
       >
         <input
           type="text"
-          placeholder="Search by Rank"
+          placeholder="Filter by Rank or Name"
           onChange={(e) => setQuerry(e.target.value)}
         />
       </form>
       <ul id="coinGrid">{generateNavLinks(cryptoArray)}</ul>
-      {querry && <div id="searchResult">{searchByRank(cryptoArray, querry)}</div>}
+      {querry && <div id="searchResult">{filterByRankOrName(cryptoArray, querry)}</div>}
     </nav>
   );
 };

@@ -16,15 +16,18 @@ export const generateNavLinks = (cryptoArray) => {
   return linkArray;
 };
 
-export const searchByRank = (arr, rank) => {
-  const token = arr.filter((coin) => coin.rank === rank);
+export const filterByRankOrName = (arr, parameter) => {
+  const argument = parameter.toLowerCase();
+  const token = arr.filter(
+    (coin) => coin.rank === argument || coin.name.toLowerCase() === argument,
+  );
 
   if (token.length === 0) {
     return <span id="searchError" className="column">Out Of Bounds</span>;
   }
 
   const result = (
-    <NavLink key={rank} id="searchLink" className="link column" to={`/${token[0].rank}`}>
+    <NavLink id="searchLink" className="link column" to={`/${token[0].rank}`}>
       <h2>{`#${token[0].rank}`}</h2>
       <p>{`${token[0].name}`}</p>
     </NavLink>

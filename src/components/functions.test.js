@@ -3,7 +3,7 @@
  */
 import { render } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router';
-import { generateNavLinks, generateRoutes, searchByRank } from './functions';
+import { generateNavLinks, generateRoutes, filterByRankOrName } from './functions';
 
 describe('testing helper functions', () => {
   test('test generateNavLinks function', () => {
@@ -48,8 +48,8 @@ describe('testing helper functions', () => {
 
     const { getByText, getByRole, queryByText } = render(
       <MemoryRouter>
-        <div>{searchByRank(cryptoArray, '3')}</div>
-      </MemoryRouter>,
+        <div>{filterByRankOrName(cryptoArray, '3')}</div>
+      </MemoryRouter>
     );
 
     const link = getByRole('link');

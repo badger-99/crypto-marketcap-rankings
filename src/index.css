@@ -3,11 +3,6 @@
   src: url('./assets/Gill-Sans-Regular.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Lato', serif;
-  src: url('./assets/Lato-Regular.ttf') format('truetype');
-}
-
 * {
   margin: 0;
   padding: 0;

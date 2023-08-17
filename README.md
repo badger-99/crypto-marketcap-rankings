@@ -64,6 +64,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://crypto-marketcap-rankings.netlify.app/)
+- [Video Presentation](https://drive.google.com/file/d/1ym0yWNck9CexPrHSmTHlxuBU3nofDG_u/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

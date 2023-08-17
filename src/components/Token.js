@@ -32,24 +32,24 @@ const Token = ({ rank }) => {
           </h2>
         </div>
         <div className="coinStats">
-          <p className="row">
-            <span>Market Cap:</span>
+          <p className="row stats">
+            <span>Market Cap</span>
             <span>{`$ ${token.marketCapUsd}`}</span>
           </p>
-          <p className="row">
-            <span>Price:</span>
+          <p className="row stats">
+            <span>Price</span>
             <span>{`$ ${token.priceUsd}`}</span>
           </p>
-          <p className="row">
-            <span>Volume traded over past 24h:</span>
+          <p className="row stats">
+            <span>Volume traded over past 24h</span>
             <span>{`$ ${token.volumeUsd24Hr}`}</span>
           </p>
-          <p className="row">
-            <span>Supply:</span>
+          <p className="row stats">
+            <span>Supply</span>
             <span>{`${token.supply} units`}</span>
           </p>
-          <p className="row">
-            <span>Max-supply:</span>
+          <p className="row stats">
+            <span>Max-supply</span>
             <span>{`${token.maxSupply} units`}</span>
           </p>
         </div>

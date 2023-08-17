@@ -92,7 +92,7 @@ Object {
             id="form"
           >
             <input
-              placeholder="Search by Rank"
+              placeholder="Filter by Rank or Name"
               type="text"
             />
           </form>
@@ -191,7 +191,7 @@ Object {
           id="form"
         >
           <input
-            placeholder="Search by Rank"
+            placeholder="Filter by Rank or Name"
             type="text"
           />
         </form>

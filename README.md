@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="" alt="logo" width="140"  height="auto" />
+  <img src="cmc-logo.PNG" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h1><b>Crypto Market Cap Rankings</b></h1>

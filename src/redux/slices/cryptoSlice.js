@@ -13,7 +13,7 @@ export const getTokens = createAsyncThunk('tokens/getTokens', async (_, thunkAPI
     const response = await axios(config);
     return response.data;
   } catch (error) {
-    const errorMsg = `${error.code}: ${error.msg}`;
+    const errorMsg = `${error.message}`;
     return thunkAPI.rejectWithValue(errorMsg);
   }
 });

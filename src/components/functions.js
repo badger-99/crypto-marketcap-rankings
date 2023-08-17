@@ -20,11 +20,11 @@ export const searchByRank = (arr, rank) => {
   const token = arr.filter((coin) => coin.rank === rank);
 
   if (token.length === 0) {
-    return <span id="searchError">Out Of Bounds.</span>;
+    return <span id="searchError" className="column">Out Of Bounds</span>;
   }
 
   const result = (
-    <NavLink key={rank} id="searchLink" className="link row" to={`/${token[0].rank}`}>
+    <NavLink key={rank} id="searchLink" className="link column" to={`/${token[0].rank}`}>
       <h2>{`#${token[0].rank}`}</h2>
       <p>{`${token[0].name}`}</p>
     </NavLink>

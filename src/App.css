@@ -22,8 +22,9 @@ li {
 
 main {
   border: 1px solid black;
+  border-radius: 5px;
   min-width: 409px;
-  width: 22.5%;
+  width: 20%;
   height: 37.413rem;
   position: fixed;
   top: 50%;
@@ -138,6 +139,6 @@ header p {
 
 .coinStats p {
   border: 1px solid green;
-  padding: 1rem 1rem;
+  padding: 1.01rem 1rem;
   justify-content: space-between;
 }

@@ -80,6 +80,7 @@ header p {
   grid-template-columns: 1fr 1fr;
   max-height: 22.55rem;
   overflow-y: auto;
+  position: relative;
 }
 
 .gridItem a {
@@ -88,4 +89,24 @@ header p {
   width: 100%;
   height: 100%;
   padding: 1.9rem;
+}
+
+#searchResult {
+  position: absolute;
+  top: 69.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 22.6rem;
+  background: rgba(69, 68, 68, 0.712);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+}
+
+#searchResult a, #searchResult p {
+  border: 1px solid;
+  padding: 4rem;
+  background: whitesmoke;
 }

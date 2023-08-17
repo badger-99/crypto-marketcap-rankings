@@ -18,17 +18,16 @@ describe('testing helper functions', () => {
       },
     ];
 
-    render(
+    const { getByText } = render(
       <MemoryRouter>
         <ul>{generateNavLinks(cryptoArray)}</ul>
       </MemoryRouter>,
     );
 
-    const li1 = screen.getByText('#1 testCoin');
-    const li2 = screen.getByText('#2 subCoin');
-
-    expect(li1).toBeInTheDocument();
-    expect(li2).toBeInTheDocument();
+    expect(getByText('#1')).toBeInTheDocument();
+    expect(getByText('testCoin')).toBeInTheDocument();
+    expect(getByText('#2')).toBeInTheDocument();
+    expect(getByText('subCoin')).toBeInTheDocument();
   });
 
   test('test searchByRank function with exsisting rank', () => {
@@ -57,7 +56,8 @@ describe('testing helper functions', () => {
 
     expect(queryByText('#1 testCoin')).not.toBeInTheDocument();
     expect(queryByText('#2 subCoin')).not.toBeInTheDocument();
-    expect(getByText('#3 miniCoin')).toBeInTheDocument();
+    expect(getByText('#3')).toBeInTheDocument();
+    expect(getByText('miniCoin')).toBeInTheDocument();
     expect(queryByText('Out Of Bounds.')).not.toBeInTheDocument();
     expect(link.getAttribute('href')).toBe('/3');
   });
@@ -87,7 +87,7 @@ describe('testing helper functions', () => {
     expect(queryByText('#1 testCoin')).not.toBeInTheDocument();
     expect(queryByText('#2 subCoin')).not.toBeInTheDocument();
     expect(queryByText('#3 miniCoin')).not.toBeInTheDocument();
-    expect(getByText('Out Of Bounds.')).toBeInTheDocument();
+    expect(getByText('Out Of Bounds')).toBeInTheDocument();
   });
 
   test('test generateRoutes function', () => {

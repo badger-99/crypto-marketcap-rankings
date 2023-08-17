@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./src/assets/cmc-logo.png" alt="logo" width="140"  height="auto" />
+  <img src="cmc-logo.PNG" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h1><b>Crypto Market Cap Rankings</b></h1>
@@ -27,7 +27,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
 
 # 📖 Crypto Market Cap Rankings <a name="about-project"></a>
 
@@ -64,7 +63,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]() - Coming soon
+- [Live Demo Link](https://crypto-marketcap-rankings.netlify.app/)
+- [Video Presentation](https://drive.google.com/file/d/1ym0yWNck9CexPrHSmTHlxuBU3nofDG_u/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,8 +74,8 @@ To get a local copy up and running, follow these steps.
 
 - Clone this project.
 - Open it in VS code.
-- Run `npm install` to install the dependencies
-- Run `npm start` to open it in the dev server
+- Run `npm install` to install the dependencies.
+- Run `npm start` to open it in the dev server.
 
 ### Prerequisites
 
@@ -91,7 +91,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-https://github.com/badger-99/top10-cryptocurrencies.git
+https://github.com/badger-99/crypto-marketcap-rankings.git
 
 ### Install
 
@@ -133,7 +133,7 @@ You can deploy this project by using the dev server. To initiate it, run `npm st
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/badger-99/top10-cryptocurrencies/issues).
+Feel free to check the [issues page](https://github.com/badger-99/crypto-marketcap-rankings/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

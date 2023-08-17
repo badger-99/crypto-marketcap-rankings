@@ -27,6 +27,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   /* box-shadow: 0px 0px 16px 11px #294f98ad; */
 }
 
@@ -127,7 +128,7 @@ header p {
 }
 
 .gridLink p {
-text-align: right;
+  text-align: right;
 }
 
 #searchResult {
@@ -199,11 +200,12 @@ text-align: right;
 .stats:nth-child(even) {
   background: #385995;
 }
+
 .stats:nth-child(5) {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.stats>span:nth-child(1) {
+.stats > span:nth-child(1) {
   font-weight: 600;
 }

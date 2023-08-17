@@ -65,6 +65,8 @@ header p {
 #coinGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-height: 25.25rem;
+  overflow-y: auto;
 }
 
 .gridItem a {

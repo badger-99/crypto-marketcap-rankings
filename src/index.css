@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Gill Sans', sans-serif;
+  src: url('./assets/Gill-Sans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato', serif;
+  src: url('./assets/Lato-Regular.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +15,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Gill Sans', sans-serif;
 }
 
 #root {

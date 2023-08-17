@@ -5,17 +5,25 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        class="row"
+        id="loading"
+      >
         <span
-          style="width: 32px; height: 32px; border-radius: 100%; border: 2px solid; border-top-color: blue; border-bottom-color: transparent; border-left-color: blue; border-right-color: blue; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both;"
+          id="loader"
+          style="width: 8rem; height: 8rem; border-radius: 100%; border: 2px solid; border-top-color: #5788e4; border-bottom-color: transparent; border-left-color: #5788e4; border-right-color: #5788e4; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both; border-width: 7px;"
         />
       </div>
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      class="row"
+      id="loading"
+    >
       <span
-        style="width: 32px; height: 32px; border-radius: 100%; border: 2px solid; border-top-color: blue; border-bottom-color: transparent; border-left-color: blue; border-right-color: blue; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both;"
+        id="loader"
+        style="width: 8rem; height: 8rem; border-radius: 100%; border: 2px solid; border-top-color: #5788e4; border-bottom-color: transparent; border-left-color: #5788e4; border-right-color: #5788e4; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both; border-width: 7px;"
       />
     </div>
   </div>,

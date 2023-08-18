@@ -105,7 +105,7 @@ To enable people with an interest in the crypto market keep track of the latest 
 
 ### Run tests
 
-To run tests, run the following command: `npm test`
+Use `npm test` to run tests.
 
 ### Deployment
 
